@@ -3,7 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
  '(inhibit-startup-screen t)
+ '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -15,7 +17,7 @@
 ;; elpa
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+             '("Marmalade" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
@@ -32,9 +34,6 @@
 ;; ~file
 ;; (setq make-backup-files nil)
 (setq backup-directory-alist (quote (("." . "D:/EmacsTemp"))))
-
-;; paren
-(show-paren-mode)
 
 ;; tab and space 
 (setq-default indent-tabs-mode nil) 
@@ -96,4 +95,8 @@
   '(require 'flymake-go))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Python IDE
+;; https://github.com/kiwanami/emacs-epc
 

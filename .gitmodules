@@ -22,3 +22,6 @@
 [submodule "plugins/submodule/glymake-go"]
 	path = plugins/submodule/glymake-go
 	url = https://github.com/robert-zaremba/flymake-go
+[submodule "plugins/submodule/neotree"]
+	path = plugins/submodule/neotree
+	url = https://github.com/jaypei/emacs-neotree

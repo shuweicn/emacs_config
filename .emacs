@@ -50,6 +50,11 @@
 (require 'tabbar)
 (tabbar-mode)
 
+;; https://github.com/jaypei/emacs-neotree
+(add-to-list 'load-path "~/.emacs.d/plugins/submodule/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;; https://github.com/auto-complete/popup-el
 (add-to-list 'load-path "~/.emacs.d/plugins/submodule/popup")
 (require 'popup)

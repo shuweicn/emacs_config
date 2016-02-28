@@ -1,0 +1,94 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; elpa
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+
+;; zh_cn
+(set-fontset-font "fontset-default" 
+'gb18030' ("Microsoft YaHei" . "unicode-bmp")) 
+
+;; default path
+(setq command-line-default-directory "C:/Users/tree/Desktop/" )
+(setq default-directory "C:/Users/tree/Desktop/" )
+
+;; ~file
+;; (setq make-backup-files nil)
+(setq backup-directory-alist (quote (("." . "D:/EmacsTemp"))))
+
+;; paren
+(show-paren-mode)
+
+;; tab and space 
+(setq-default indent-tabs-mode nil) 
+(setq-default tab-width 4)
+;;(setq-default lua-indent-level 4)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PUBLIC  CONFIGURATION FILE
+;; https://github.com/dholm/tabbar/
+(add-to-list 'load-path "~/.emacs.d/plugins/tabbar")
+(require 'tabbar)
+(tabbar-mode)
+
+;; https://github.com/auto-complete/popup-el
+(add-to-list 'load-path "~/.emacs.d/plugins/submodule/popup")
+(require 'popup)
+
+;; https://github.com/auto-complete/auto-complete
+(add-to-list 'load-path "~/.emacs.d/plugins/submodule/auto-complete")
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; https://github.com/capitaomorte/yasnippet
+(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/yasnippet")
+(require 'yasnippet)
+(yas-global-mode nil)
+
+;; auto-complete support yasnippet
+(setq-default ac-sources (push 'ac-source-yasnippet ac-sources))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Golang IDE
+;; https://github.com/dominikh/go-mode.el
+(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/go-mode")
+(require 'go-mode-autoloads)
+
+;; https://github.com/syohex/emacs-go-eldoc
+(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/go-eldoc")
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+
+;; https://github.com/nsf/gocode
+(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/gocode/emacs")
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; https://github.com/robert-zaremba/flymake-go
+(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/glymake-go")
+(eval-after-load "go-mode"
+  '(require 'flymake-go))
+
+
+

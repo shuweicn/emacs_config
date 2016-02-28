@@ -46,7 +46,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PUBLIC  CONFIGURATION FILE
 ;; https://github.com/dholm/tabbar/
-(add-to-list 'load-path "~/.emacs.d/plugins/tabbar")
+(add-to-list 'load-path "~/.emacs.d/plugins/submodule/tabbar")
 (require 'tabbar)
 (tabbar-mode)
 

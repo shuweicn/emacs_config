@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: fmt.Println
+# key: pn
+# binding: direct-keybinding
+# --
+fmt.Println($1)

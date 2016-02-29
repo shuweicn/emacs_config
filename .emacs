@@ -14,6 +14,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; elpa
 (require 'package)
 (add-to-list 'package-archives
@@ -23,7 +25,13 @@
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 
-;; zh_cn
+;; coding utf8 
+(setq revert-buffer-with-coding-system 'utf-8)  
+
+;; scroll single line
+(setq scroll-step 1 scroll-conservatively  10000)
+
+;; chinese display problems
 (set-fontset-font "fontset-default" 
 'gb18030' ("Microsoft YaHei" . "unicode-bmp")) 
 
@@ -40,9 +48,8 @@
 (setq-default tab-width 4)
 ;;(setq-default lua-indent-level 4)
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; PUBLIC  CONFIGURATION FILE
 ;; https://github.com/dholm/tabbar/
 (add-to-list 'load-path "~/.emacs.d/plugins/submodule/tabbar")

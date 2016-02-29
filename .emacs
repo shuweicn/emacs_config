@@ -97,9 +97,9 @@
 (ac-config-default)
 
 ;; https://github.com/robert-zaremba/flymake-go
-(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/glymake-go")
-(eval-after-load "go-mode"
-  '(require 'flymake-go))
+;;(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/glymake-go")
+;;(eval-after-load "go-mode"
+;;  '(require 'flymake-go))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: reflect.TypeOf(...)
+# key: tof
+# --
+reflect.TypeOf($1)

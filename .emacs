@@ -24,6 +24,9 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
+;; backspace ctrl h
+(global-set-key "\C-h" 'backward-delete-char-untabify)  
+(global-set-key "\d" 'delete-char)  
 
 ;; coding utf8 
 (setq revert-buffer-with-coding-system 'utf-8)  
@@ -84,11 +87,12 @@
 ;; https://github.com/dominikh/go-mode.el
 (add-to-list 'load-path  "~/.emacs.d/plugins/submodule/go-mode")
 (require 'go-mode-autoloads)
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; https://github.com/syohex/emacs-go-eldoc
 (add-to-list 'load-path  "~/.emacs.d/plugins/submodule/go-eldoc")
 (require 'go-eldoc)
-(add-hook 'go-mode-hook 'go-eldoc-setup)
+;;(add-hook 'go-mode-hook 'go-eldoc-setup)
 
 ;; https://github.com/nsf/gocode
 (add-to-list 'load-path  "~/.emacs.d/plugins/submodule/gocode/emacs")

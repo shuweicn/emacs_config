@@ -38,23 +38,25 @@
 
 
 (when (eq system-type 'gnu/linux)
-      ;; backspace ctrl + h
-      (global-set-key "\C-h" 'backward-delete-char-untabify)
-      (global-set-key "\d" 'delete-char)
-      ;; (setq make-backup-files nil)
-      (setq backup-directory-alist (quote (("." . "/tmp/emacs"))))
-      )
+  ;; linum
+  (setq linum-format "%3d ")
+  ;; backspace ctrl + h
+  (global-set-key "\C-h" 'backward-delete-char-untabify)
+  (global-set-key "\d" 'delete-char)
+  ;; (setq make-backup-files nil)
+  (setq backup-directory-alist (quote (("." . "/tmp/emacs"))))
+  )
 
 (when (eq system-type 'windows-nt)
   ;; chinese display problems
   (set-fontset-font "fontset-default"
                     'gb18030' ("Microsoft YaHei" . "unicode-bmp")) 
 
-   ;; default path
+  ;; default path
   (setq command-line-default-directory "C:/Users/tree/Desktop/" )
   (setq default-directory "C:/Users/tree/Desktop/" )
 
-   ;; ~file
+  ;; ~file
   (setq make-backup-files nil)
   (setq backup-directory-alist (quote (("." . "D:/EmacsTemp"))))
   

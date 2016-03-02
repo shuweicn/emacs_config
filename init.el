@@ -36,7 +36,6 @@
 ;; scroll single line
 (setq scroll-step 1 scroll-conservatively  10000)
 
-
 (when (eq system-type 'gnu/linux)
   ;; linum
   (setq linum-format "%3d ")

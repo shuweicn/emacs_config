@@ -1,5 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: fmt.Println
+# name: fmt.Println(...)
 # key: pn
 # binding: direct-keybinding
 # --

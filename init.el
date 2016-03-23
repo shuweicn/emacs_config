@@ -115,6 +115,20 @@
 ;;  '(require 'flymake-go))
 
 
+;; golang ide debug                                           
+(defun shell-window()
+  (interactive)
+  (delete-other-windows)
+  (switch-to-buffer-other-window "*shell*")
+  (shell)
+  (other-window 1)
+  (enlarge-window 8)
+  )
+
+(global-set-key [f5] 'shell-window)
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Python IDE

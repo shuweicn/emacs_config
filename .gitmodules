@@ -1,0 +1,27 @@
+[submodule "plugins/yasnippet"]
+	path = plugins/yasnippet
+	url = https://github.com/capitaomorte/yasnippet
+[submodule "plugins/popup"]
+	path = plugins/popup
+	url = https://github.com/auto-complete/popup-el
+[submodule "plugins/auto-complete"]
+	path = plugins/auto-complete
+	url = https://github.com/auto-complete/auto-complete
+[submodule "plugins/tabbar"]
+	path = plugins/tabbar
+	url = https://github.com/dholm/tabbar
+[submodule "plugins/neotree"]
+	path = plugins/neotree
+	url = https://github.com/jaypei/emacs-neotree
+[submodule "plugins/go-mode"]
+	path = plugins/go-mode
+	url = https://github.com/dominikh/go-mode.el
+[submodule "plugins/go-eldoc"]
+	path = plugins/go-eldoc
+	url = https://github.com/syohex/emacs-go-eldoc
+[submodule "plugins/gocode"]
+	path = plugins/gocode
+	url = https://github.com/nsf/gocode
+[submodule "plugins/flymake-go"]
+	path = plugins/flymake-go
+	url = https://github.com/robert-zaremba/flymake-go

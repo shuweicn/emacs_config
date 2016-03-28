@@ -36,6 +36,9 @@
 ;; scroll single line
 (setq scroll-step 1 scroll-conservatively  10000)
 
+;; hs-minor-model
+
+
 (when (eq system-type 'gnu/linux)
   ;; linum
   (setq linum-format "%3d ")
@@ -44,6 +47,19 @@
   (global-set-key "\d" 'delete-char)
   ;; (setq make-backup-files nil)
   (setq backup-directory-alist (quote (("." . "/tmp/emacs"))))
+
+  ;; 中文符号 乱码
+  (set-language-environment 'Chinese-GB)
+  ;;(set-keyboard-coding-system 'utf-8)
+  ;;(set-clipboard-coding-system 'utf-8)
+  ;;(set-terminal-coding-system 'utf-8)
+  ;;(set-buffer-file-coding-system 'utf-8)
+  ;;(set-default-coding-systems 'utf-8)
+  ;;(set-selection-coding-system 'utf-8)
+  ;;(modify-coding-system-alist 'process "*" 'utf-8)
+  ;;(setq default-process-coding-system '(utf-8 . utf-8))
+  ;;(setq-default pathname-coding-system 'utf-8)
+  ;;(set-file-name-coding-system 'utf-8)
   )
 
 (when (eq system-type 'windows-nt)
@@ -65,26 +81,26 @@
 
 ;; PUBLIC  CONFIGURATION FILE
 ;; https://github.com/dholm/tabbar/
-(add-to-list 'load-path "~/.emacs.d/plugins/submodule/tabbar")
+(add-to-list 'load-path "~/.emacs.d/plugins/tabbar")
 (require 'tabbar)
 (tabbar-mode)
 
 ;; https://github.com/jaypei/emacs-neotree
-(add-to-list 'load-path "~/.emacs.d/plugins/submodule/neotree")
+(add-to-list 'load-path "~/.emacs.d/plugins/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
 ;; https://github.com/auto-complete/popup-el
-(add-to-list 'load-path "~/.emacs.d/plugins/submodule/popup")
+(add-to-list 'load-path "~/.emacs.d/plugins/popup")
 (require 'popup)
 
 ;; https://github.com/auto-complete/auto-complete
-(add-to-list 'load-path "~/.emacs.d/plugins/submodule/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete-config)
 (ac-config-default)
 
 ;; https://github.com/capitaomorte/yasnippet
-(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/yasnippet")
+(add-to-list 'load-path  "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode nil)
 
@@ -95,27 +111,27 @@
 
 ;; Golang IDE
 ;; https://github.com/dominikh/go-mode.el
-(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/go-mode")
+(add-to-list 'load-path  "~/.emacs.d/plugins/go-mode")
 (require 'go-mode-autoloads)
 
 ;; https://github.com/syohex/emacs-go-eldoc
-(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/go-eldoc")
+(add-to-list 'load-path  "~/.emacs.d/plugins/go-eldoc")
 (require 'go-eldoc)
 (add-hook 'go-mode-hook 'go-eldoc-setup)
 
 ;; https://github.com/nsf/gocode
-(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/gocode/emacs")
+(add-to-list 'load-path  "~/.emacs.d/plugins/gocode/emacs")
 (require 'go-autocomplete)
 (require 'auto-complete-config)
 (ac-config-default)
 
 ;; https://github.com/robert-zaremba/flymake-go
-;;(add-to-list 'load-path  "~/.emacs.d/plugins/submodule/glymake-go")
+;;(add-to-list 'load-path  "~/.emacs.d/plugins/glymake-go")
 ;;(eval-after-load "go-mode"
 ;;  '(require 'flymake-go))
 
 
-;; golang ide debug                                           
+;; golang ide debug
 (defun shell-window()
   (interactive)
   (delete-other-windows)
@@ -126,8 +142,6 @@
   )
 
 (global-set-key [f5] 'shell-window)
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
